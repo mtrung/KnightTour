@@ -1,0 +1,26 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:KnightTourProblemSolver="clr-namespace:KnightTourProblemSolver" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="KnightTourProblemSolver.Page" 
+    Width="480" Height="360" mc:Ignorable="d">
+	<Canvas x:Name="LayoutRoot" Background="#FF000000" Margin="0,0,0,0" HorizontalAlignment="Left" Width="480">
+		<Rectangle Height="360" Width="101" Canvas.Left="379" Stroke="#FF000000">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5" SpreadMethod="Pad" MappingMode="RelativeToBoundingBox">
+					<GradientStop Color="#FF050516" Offset="1"/>
+					<GradientStop Color="#FF00C000"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Height="26.75" Width="300" Canvas.Left="25" Canvas.Top="8" FontFamily="Verdana" FontSize="18.667" Foreground="#FFEDFF00" Text="Knight's Tour Problem Solver" TextWrapping="Wrap" FontWeight="Normal"/>
+		
+		<KnightTourProblemSolver:UIBoard Height="250" Width="330" Canvas.Top="62" Canvas.Left="25" x:Name="board"/>
+		<Button x:Name="btnNewGame" IsEnabled="True" Canvas.Left="398" Canvas.Top="287" Content="Reset" Width="74" FontWeight="Normal" FontFamily="Verdana" FontStyle="Normal" Click="btnNewGame_Click" Height="27">
+		</Button>
+		<Button x:Name="btnNextMove" IsEnabled="{Binding IsAlive, ElementName=board, Mode=TwoWay, UpdateSourceTrigger=Default}" Canvas.Left="398" Canvas.Top="62" Content="Next Move" Width="74" FontWeight="Normal" FontFamily="Verdana" FontStyle="Normal" Click="btnNextMove_Click" Height="26">
+		</Button>
+		<HyperlinkButton Height="16" Width="144" Canvas.Left="25" Canvas.Top="337" NavigateUri="http://trungvo.wordpress.com" Content="Written by Trung Vo"/>
+		<TextBlock Height="56" Width="74" Canvas.Left="398" Canvas.Top="106" Text="Click anywhere in the board to start" TextWrapping="Wrap" Foreground="#FFEDFF00"/>
+		
+	</Canvas>
+</UserControl>
