@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OutOfBrowserSettings ShortName="KnightTourProblemSolver" EnableGPUAcceleration="True">
+
+	<OutOfBrowserSettings.Blurb>
+		A short description of the application.
+	</OutOfBrowserSettings.Blurb>
+	<OutOfBrowserSettings.WindowSettings>
+		<WindowSettings Height="600" Width="800" Title="KnightTourProblemSolver" />
+	</OutOfBrowserSettings.WindowSettings>
+</OutOfBrowserSettings>
