@@ -29,7 +29,7 @@ namespace KnightTourProblemSolver
         SolidColorBrush redBrush = new SolidColorBrush(Color.FromArgb(255, 246, 14, 14));
         //SolidColorBrush redBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
 
-        Board mainBoard;
+        Algorithm mainBoard;
         
         int currentX;
         int currentY;//0-based
@@ -82,8 +82,8 @@ namespace KnightTourProblemSolver
 
         public void NewGame()
         {
-            mainBoard = new Board(nColCount, nRowCount);
-            mainBoard.init();
+            mainBoard = new Algorithm(nColCount, nRowCount);
+            mainBoard.Init();
 
             Clear();
             b1stTime = true;
@@ -113,8 +113,6 @@ namespace KnightTourProblemSolver
 
         private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //if (mainBoard.GameOver == true)
-             //   return;
             Translate2LogicalPos(e);
             MoveNext();
         }
@@ -155,15 +153,15 @@ namespace KnightTourProblemSolver
                 return;
             }
 
-            int poss_num = mainBoard.GetPossibleMoves(curr);
+            int poss_num = mainBoard.GetPossibleMovesCount(curr);
             int boardindex = mainBoard.GetIndex(curr);
 
             if (poss_num != 0 && boardindex <= 64)
             {
                 writexyC(curr, boardindex, false);//reset color
-                mainBoard.updateAccessibility(curr);//update current position accessibility
+                mainBoard.UpdateAccessibility(curr);//update current position accessibility
 
-                curr = mainBoard.determineNextMove(curr);
+                curr = mainBoard.DetermineNextMove(curr);
                 mainBoard.SetIndex(curr, ++boardindex);
                 writexyC(curr, boardindex, true);//highlight color
 				
