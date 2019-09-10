@@ -4,7 +4,8 @@
 * Using Warnsdorf's rule
 
 ### History
-* Current version: C# for Silverlight: http://www.inoapp.com/silverlight/knighttour.html
+* 3rd: C# version for console testing
+* 2nd: C# version for Silverlight
 * 1st version: C++ for DOS console
 
 ### Old notes from DOS version
